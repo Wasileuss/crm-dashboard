@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Dashboard CRM test task">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard | CRM</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header"></header>
+        <main class="page">
+            <div class="page__container customers">
+                <aside class="customers__side side">
+                    <div class="side__body">
+                        <div class="side__header">
+                            <div class="side__logo">
+                                <img src="img/setting.svg" alt="Dashboard logo">
+                            </div>
+                            <div class="side__title-wrapper">
+                                <h1 class="side__title">Dashboard</h1>
+                                <p class="side__subtitle">v.01</p>
+                            </div>
+                        </div>
+                        <div class="side__menu menu">
+                            <button type="button" class="menu__icon icon-menu" aria-label="Menu button"><span></span></button>
+                            <nav class="menu__body">
+                                <ul class="menu__list">
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link">
+                                            <div class="menu__link-image">
+                                                <img src="img/key-square.svg" alt="Image">
+                                            </div>
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link">
+                                            <div class="menu__link-image">
+                                                <img src="img/3d-square.svg" alt="Image">
+                                            </div>
+                                            <span>Projects</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link menu__link--active">
+                                            <div class="menu__link-image">
+                                                <img src="img/user-square.svg" alt="Image">
+                                            </div>
+                                            <span>Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link">
+                                            <div class="menu__link-image">
+                                                <img src="img/wallet-money.svg" alt="Image">
+                                            </div>
+                                            <span>Income</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link">
+                                            <div class="menu__link-image">
+                                                <img src="img/discount-shape.svg" alt="Image">
+                                            </div>
+                                            <span>Promote</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#" class="menu__link">
+                                            <div class="menu__link-image">
+                                                <img src="img/message-question.svg" alt="Image">
+                                            </div>
+                                            <span>Help</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="side__user user">
+                            <img class="user__avatar" src="img/user.jpg" alt="User avatar">
+                            <div class="user__info">
+                                <p class="user__name">Evano</p>
+                                <p class="user__position">Project Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="customers__member member">
+                    <div class="member__body">
+                        <h2 class="member__title">Hello Evano &#128075;,</h2>
+                        <div class="member__content content">
+                            <div class="content__header">
+                                <div class="content__title-wrapper">
+                                    <h3 class="content__title">All Customers</h3>
+                                    <h4 class="content__subtitle">Active Members</h4>
+                                </div>
+                                <div class="content__search">
+                                    <input class="content__input" type="text" id="search" placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="content__table table">
+                                <table class="table__table">
+                                    <thead class="table__head">
+                                        <tr class="table__head-row">
+                                            <th class="table__head-cell">Customer Name</th>
+                                            <th class="table__head-cell">Company</th>
+                                            <th class="table__head-cell">Phone Number</th>
+                                            <th class="table__head-cell">Email</th>
+                                            <th class="table__head-cell">Country</th>
+                                            <th class="table__head-cell">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table__body"></tbody>
+                                </table>
+                            </div>
+                            <div class="content__footer">
+                                <div class="content__info"></div>
+                                <div class="content__pagination pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

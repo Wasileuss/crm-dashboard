@@ -1,0 +1,319 @@
+.side {
+    max-width: toRem(306);
+    width: 100%;
+    height: auto;
+    flex: 1 1 toRem(306);
+
+    @media (max-width: toEm(1023.98)) {
+        flex: 0 0 auto;
+    }
+
+    /* .side__body */
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: toRem(36) toRem(28) toRem(76);
+        gap: toRem(64);
+
+        @media (max-width: toEm(1023.98)) {
+            height: 0;
+            padding: 0;
+        }
+    }
+
+    /* .side__header */
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: toRem(8);
+
+        @media (max-width: toEm(1023.98)) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $activeBgColor;
+            z-index: 5;
+            height: toRem(56);
+            padding-left: toRem(30);
+        }
+
+        @media (max-width: toEm(575.98)) {
+            padding-left: toRem(15);
+        }
+    }
+
+    /* .side__logo */
+
+    &__logo {
+        flex-shrink: 0;
+        width: toRem(37);
+        height: toRem(37);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    /* .side__title-wrapper */
+
+    &__title-wrapper {
+        display: flex;
+        align-items: flex-end;
+        gap: toRem(4);
+    }
+
+    /* .side__title */
+
+    &__title {
+        font-size: toRem(28);
+        font-weight: 600;
+    }
+
+    /* .side__subtitle */
+
+    &__subtitle {
+        font-size: toRem(10);
+        font-weight: 500;
+        color: #838383;
+    }
+
+    /* .side__menu */
+
+    &__menu {
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+
+    @media (max-width: toEm(1023.98)) {
+        display: none;
+    }
+
+    /* .user__avatar */
+
+    &__avatar {
+        width: toRem(42);
+        height: toRem(42);
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    /* .user__info */
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(4);
+    }
+
+    /* .user__name */
+
+    &__name {
+        font-weight: 500;
+    }
+
+    /* .user__position */
+
+    &__position {
+        font-size: toRem(12);
+        color: #757575;
+    }
+}
+
+.menu {
+	flex-grow: 1;
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+        position: relative;
+        transition: all 1s ease-in-out;
+    
+        @media (max-width: toEm(1023.98)) {
+            position: fixed;
+            max-width: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            overflow: auto;
+            left: -100%;
+            margin-top: toRem(56);
+            padding: toRem(30) toRem(15) toRem(100);
+            background-color: $activeBgColor;
+            transition: left 0.7s;
+            z-index: 5;
+    
+            .menu-open & {
+                left: 0;
+            }
+        }
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: toRem(18);
+
+		@media (max-width: toEm(767.98)) {
+			row-gap: toRem(25);
+		}
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+		font-size: toRem(14);
+		font-weight: 500;
+        color: $grayColor;
+		position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: toRem(14);
+        padding: toRem(11);
+        border: toRem(1) solid transparent;
+        border-radius: toRem(8);
+        transition: all 0.3s ease 0s;
+
+		&::before {
+			content: url("../img/chevron-right.svg");
+			position: absolute;
+            right: toRem(11);
+			top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease 0s;
+		}
+
+        &--active {
+            background-color: $blueColor;
+            color: $whiteColor;
+
+            &::before {
+                content: url("../img/chevron-right-white.svg");
+                transition: all 0.3s ease 0s;
+            }
+        }
+
+		@media (any-hover: hover) {
+			&:hover {
+                border-color: $blueColor;
+			}
+            &:hover::before {
+                transition: all 0.3s ease 0s;
+                animation: move 1s ease 0s infinite;
+
+                @keyframes move {
+                    0% {
+                        transform: translateX(0) translateY(-50%);
+                    }
+
+                    50% {
+                        transform: translateX(-10px) translateY(-50%);
+                    }
+                    100% {
+                        transform: translateX(0) translateY(-50%);
+                    }
+                }
+            }
+		}
+	}
+
+    // .menu__link-image
+    &__link-image {
+        width: toRem(24);
+        height: toRem(24);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+}
+
+//Burger Icon
+.icon-menu {
+	// display: none;
+	@media (max-width: toEm(1023.98)) {
+		display: block;
+		position: fixed;
+        right: toRem(30);
+        top: toRem(20);
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+
+		@media (any-hover: none) {
+			cursor: default;
+		}
+        
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: $blackColor;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+
+    @media (max-width: toEm(575.98)) {
+        right: toRem(15);
+    }
+}

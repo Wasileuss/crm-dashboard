@@ -1,0 +1,99 @@
+@use "sass:math";
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1440;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поїнти
+$pc: toEm($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
+$pcSmall: toEm(1023.98); // ПК
+$tablet: toEm(991.98); // Планшети, деякі телефони в горизонтальному положенні
+$mobile: toEm(767.98); // Телефони L
+$mobileMedium: toEm(575.98); // Телефони M
+$mobileSmall: toEm(479.98); // Телефони S
+
+// Кольори
+$mainColor: #292d32;
+$mainBgColor: #fafbff;
+$grayColor: #9197b3;
+$lightGrayColor: #B5B7C0;
+$greenColor: #16C098;
+$blackColor: #000000;
+$whiteColor: #ffffff;
+$activeTextColor: #008767;
+$activeBgColor: #a6e7d8;
+$inactiveTextColor: #df0404;
+$inactiveBgColor: #ffc5c5;
+$blueColor: #5932ea;
+
+// Функції
+@import "_functions.scss";
+
+// Шрифти
+// @import "_fonts.scss";
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap");
+
+// Обнулення
+@import "_reset.scss";
+
+// Компоненти
+/// @import "_common.scss";
+// @import "_header.scss";
+@import "_aside.scss";
+@import "_customers.scss";
+// @import "_footer.scss";
+
+body {
+	font-family: "Poppins", sans-serif;
+    font-size: toRem(14);
+	color: $mainColor;
+    
+	&.menu-open {
+		
+        @media (max-width: toEm(1023.98)) {
+            overflow: hidden;
+            touch-action: none;
+            overscroll-behavior: none;
+        }
+	}
+}
+
+.wrapper {
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.wrapper > main {
+	flex-grow: 1;
+}
+
+[class*="__container"] {
+	max-width: toRem(1440);
+	margin: 0 auto;
+	// padding-left: toRem(15);
+	// padding-right: toRem(15);
+}
+
+.customers {
+    display: flex;
+    position: relative;
+
+    @media (max-width: toEm(1023.98)) {
+        flex-direction: column;
+        // height: toRem(56);
+
+        // .icon-menu & {
+        //     height: auto;
+        // }
+    }
+}
